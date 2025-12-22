@@ -1,0 +1,106 @@
+(include modifier.kbd)
+
+(defcfg
+  process-unmapped-keys yes
+)
+
+(defsrc
+  esc
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
+)
+
+(defalias
+  held-symbol-layer (layer-while-held symbol)
+  held-cmd-layer (layer-while-held command)
+  held-altaction-layer (layer-while-held altaction)
+  held-shift-layer (layer-while-held shift)
+
+  f (tap-hold-release 200 200 f @held-cmd-layer)
+  d (tap-hold-release 200 200 d @held-shift-layer)
+  s (tap-hold-release 200 200 s @held-altaction-layer)
+  a (tap-hold-release 200 200 a (one-shot 2000 @losmet))
+
+  j (tap-hold-release 200 200 j @held-cmd-layer)
+  k (tap-hold-release 200 200 k @held-shift-layer)
+  l (tap-hold-release 200 200 l @held-altaction-layer)
+  ; (tap-hold-release 200 200 ret (one-shot 2000 @losmet))
+  lsft (tap-hold-release 200 200 (layer-switch capital) lsft)
+
+  spc (tap-hold-release 200 200 spc @held-symbol-layer)
+
+  cap (tap-hold-release 200 200 esc (one-shot 2000 @losmain))
+
+  esc-g (fork esc (layer-switch game) (lshift rshift))
+  esc-b (fork esc (layer-switch base) (lshift rshift))
+
+  ls-base (layer-switch base)
+  ls-cap (layer-switch capital)
+  ret-ls-base (multi ret @ls-base)
+)
+
+
+(deflayer base
+  @esc-g
+  grv  1     2     3     4     5    6    7     8     9     0     -    =    bspc
+  tab  q     w    e     r     t    y    u     i    o     p     [    ]    \
+  @cap @a    @s    @d    @f    g    h    @j   @k    @l    @;    S-;    ret
+  @lsft z     x     c     v     b    n    m     ,     .    /     rsft
+  lctl lalt  @lang           @spc                 ralt  rmet  rctl
+)
+
+(deflayer game
+  @esc-b
+  grv   1     2     3     4     5     6     7     8     9     0     -     =     bspc
+  tab   q     w     e     r     t     y     u     i     o     p     [     ]     \
+  @cap  a     s     d     f     g     h     j     k     l     ;     '     ret
+  lsft  z     x     c     v     b     n     m     ,     .     /     rsft
+  lctl  lalt  @lang              spc                   ralt  rmet  rctl
+)
+
+(deflayer shift
+  @ls-base
+  S-grv  S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    S--    S-=    S-bspc
+  S-tab  S-q    S-w    S-e    S-r    S-t    S-y    S-u    S-i    S-o    S-p    S-[    S-]    S-\
+  caps S-a    S-s    S-d    S-f    S-g    S-h    S-j    S-k    S-l    S-;    S-'    S-ret 
+  lsft S-z    S-x    S-c    S-v    S-b    S-n    S-m    S-,    S-.    S-/    rsft
+  lctl lmet lalt           tab            ralt rmet rctl
+)
+
+(deflayer capital
+  @ls-base
+  grv  S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    S--    S-=    bspc
+  tab  S-q    S-w    S-e    S-r    S-t    S-y    S-u    S-i    S-o    S-p    [    ]    \
+  caps S-a    S-s    S-d    S-f    S-g    S-h    S-j    S-k    S-l    @ret-ls-base    '    @ret-ls-base
+  @ls-base S-z    S-x    S-c    S-v    S-b    S-n    S-m    ,    .    /    rsft
+  lctl lmet lalt           @ls-base            ralt rmet rctl
+)
+
+(deflayer command
+  esc
+  @m_grv  @m_1    @m_2    @m_3    @m_4    @m_5    @m_6    @m_7    @m_8    @m_9    @m_0    @m_-    @m_=    @m_bspc
+  @m_tab  @m_q    @m_w    @m_e    @m_r    @m_t    @m_y    @m_u    @ls-cap @m_o    @m_p    @m_[    @m_]    @m_\
+  caps    @m_a    @m_s    @m_d    @m_f    @m_g    left    down    up      right   @m_;    @m_'    @m_ret
+  lsft    @m_z    @m_x    @m_c    @m_v    @m_b    @m_n    esc     @m_,    @m_.    @m_/    rsft
+  lctl    lalt    @lang           @m_spc                             ralt  rmet  rctl
+)
+
+(deflayer symbol
+  esc
+  grv   1      2      3      4      5      6      7      8      9      0      -      =      bspc
+  tab   S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S--    =    [      ]      \
+  caps  S-,    -      S-.    S-[      [    S-=    ,      .      /      ;    S-'    ret
+  lsft  \      S-\    S-/    S-]      ]    S-9    S-0    `      S-`    '      rsft
+  lctl  lalt   @lang                  bspc                  ralt   rmet   rctl
+)
+
+(deflayermap (altaction)
+  h (multi @wordmov left)
+  j (multi down)
+  k (multi up)
+  l (multi @wordmov right)
+  spc bspc 
+)

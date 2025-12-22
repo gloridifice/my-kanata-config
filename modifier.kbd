@@ -1,0 +1,93 @@
+(platform (win)
+    (defalias
+        rosmain rctl
+        losmain lctl
+        rosalt ralt
+        losalt lalt
+        rossft rsft
+        lossft lsft
+        rosmet rmet
+        losmet lmet
+        lang (multi lctl lsft spc)
+        wordmov lctl
+        m_spc (multi lalt spc)
+    )
+)
+
+(platform (macos)
+    (defalias
+        rosmain rmet
+        losmain lmet
+        rosalt ralt
+        losalt lalt
+        rossft rsft
+        lossft lsft
+        rosmet rctl
+        losmet lctl
+        lang caps
+        wordmov lalt
+        m_spc  (multi @losmain spc)
+    )
+)
+
+(defalias
+  ;; --- Row 1 ---
+  m_grv  (multi @losmain grv)
+  m_1    (multi @losmain 1)
+  m_2    (multi @losmain 2)
+  m_3    (multi @losmain 3)
+  m_4    (multi @losmain 4)
+  m_5    (multi @losmain 5)
+  m_6    (multi @losmain 6)
+  m_7    (multi @losmain 7)
+  m_8    (multi @losmain 8)
+  m_9    (multi @losmain 9)
+  m_0    (multi @losmain 0)
+  m_-  (multi @losmain -)
+  m_=  (multi @losmain =)
+  m_bspc (multi @losmain bspc)
+
+  ;; --- Row 2 ---
+  m_tab  (multi @losmain tab)
+  m_q    (multi @losmain q)
+  m_w    (multi @losmain w)
+  m_e    (multi @losmain e)
+  m_r    (multi @losmain r)
+  m_t    (multi @losmain t)
+  m_y    (multi @losmain y)
+  m_u    (multi @losmain u)
+  m_i    (multi @losmain i)
+  m_o    (multi @losmain o)
+  m_p    (multi @losmain p)
+  m_[  (multi @losmain [)
+  m_]  (multi @losmain ])
+  m_\  (multi @losmain \)
+
+  ;; --- Row 3 ---
+  m_caps (multi @losmain caps)
+  m_a    (multi @losmain a)
+  m_s    (multi @losmain s)
+  m_d    (multi @losmain d)
+  m_f    (multi @losmain f)
+  m_g    (multi @losmain g)
+  m_h    (multi @losmain h)
+  m_j    (multi @losmain j)
+  m_k    (multi @losmain k)
+  m_l    (multi @losmain l)
+  m_;  (multi @losmain ;)
+  m_'  (multi @losmain ')
+  m_ret  (multi @losmain ret)
+
+  ;; --- Row 4 ---
+  ;; 注意：Shift 键通常不在此处理，保持透传或单独定义
+  m_z    (multi @losmain z)
+  m_x    (multi @losmain x)
+  m_c    (multi @losmain c)
+  m_v    (multi @losmain v)
+  m_b    (multi @losmain b)
+  m_n    (multi @losmain n)
+  m_m    (multi @losmain m)
+  m_,  (multi @losmain ,)
+  m_.  (multi @losmain .)
+  m_/  (multi @losmain /)
+)
