@@ -6,8 +6,10 @@
         losalt lalt
         rossft rsft
         lossft lsft
-        rosmet rmet
-        losmet lmet
+        rosmet rctl
+        losmet lctl
+        ;; Mapping lalt to lwin on windows
+        lalt lmet
         lang (multi lctl spc)
         wordmov lctl
         m_spc (multi lalt spc)
@@ -24,6 +26,7 @@
         lossft lsft
         rosmet rctl
         losmet lctl
+        lalt lalt
         lang caps
         wordmov lalt
         m_spc  (multi @losmain spc)
