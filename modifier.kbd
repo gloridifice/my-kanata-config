@@ -8,7 +8,7 @@
         lossft lsft
         rosmet rmet
         losmet lmet
-        lang (multi lctl lsft spc)
+        lang (multi lctl spc)
         wordmov lctl
         m_spc (multi lalt spc)
     )
@@ -90,4 +90,67 @@
   m_,  (multi @losmain ,)
   m_.  (multi @losmain .)
   m_/  (multi @losmain /)
+)
+
+(defalias
+  ;; --- Row 1 ---
+  ms_grv  (multi @losmain lsft grv)
+  ms_1    (multi @losmain lsft 1)
+  ms_2    (multi @losmain lsft 2)
+  ms_3    (multi @losmain lsft 3)
+  ms_4    (multi @losmain lsft 4)
+  ms_5    (multi @losmain lsft 5)
+  ms_6    (multi @losmain lsft 6)
+  ms_7    (multi @losmain lsft 7)
+  ms_8    (multi @losmain lsft 8)
+  ms_9    (multi @losmain lsft 9)
+  ms_0    (multi @losmain lsft 0)
+  ms_-  (multi @losmain lsft -)
+  ms_=  (multi @losmain lsft =)
+  ms_bspc (multi @losmain lsft bspc)
+  ms_spc (multi @losmain lsft spc)
+
+  ;; --- Row 2 ---
+  ms_tab  (multi @losmain lsft tab)
+  ms_q    (multi @losmain lsft q)
+  ms_w    (multi @losmain lsft w)
+  ms_e    (multi @losmain lsft e)
+  ms_r    (multi @losmain lsft r)
+  ms_t    (multi @losmain lsft t)
+  ms_y    (multi @losmain lsft y)
+  ms_u    (multi @losmain lsft u)
+  ms_i    (multi @losmain lsft i)
+  ms_o    (multi @losmain lsft o)
+  ms_p    (multi @losmain lsft p)
+  ms_[  (multi @losmain lsft [)
+  ms_]  (multi @losmain lsft ])
+  ms_\  (multi @losmain lsft \)
+
+  ;; --- Row 3 ---
+  ms_caps (multi @losmain lsft caps)
+  ms_a    (multi @losmain lsft a)
+  ms_s    (multi @losmain lsft s)
+  ms_d    (multi @losmain lsft d)
+  ms_f    (multi @losmain lsft f)
+  ms_g    (multi @losmain lsft g)
+  ms_h    (multi @losmain lsft h)
+  ms_j    (multi @losmain lsft j)
+  ms_k    (multi @losmain lsft k)
+  ms_l    (multi @losmain lsft l)
+  ms_;  (multi @losmain lsft ;)
+  ms_'  (multi @losmain lsft ')
+  ms_ret  (multi @losmain lsft ret)
+
+  ;; --- Row 4 ---
+  ;; 注意：Shift 键通常不在此处理，保持透传或单独定义
+  ms_z    (multi @losmain lsft z)
+  ms_x    (multi @losmain lsft x)
+  ms_c    (multi @losmain lsft c)
+  ms_v    (multi @losmain lsft v)
+  ms_b    (multi @losmain lsft b)
+  ms_n    (multi @losmain lsft n)
+  ms_m    (multi @losmain lsft m)
+  ms_,  (multi @losmain lsft ,)
+  ms_.  (multi @losmain lsft .)
+  ms_/  (multi @losmain lsft /)
 )
