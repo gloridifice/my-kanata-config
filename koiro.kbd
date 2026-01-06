@@ -77,11 +77,11 @@
 
 (deflayer capital
   @ls-base
-  grv      S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0           S--    S-=    bspc
+  grv      1      2      3      4      5      6      7      8      9      0             S--    =    bspc
   tab      S-q    S-w    S-e    S-r    S-t    S-y    S-u    S-i    S-o    S-p           [      ]    \
   @caps    S-a    S-s    S-d    S-f    S-g    S-h    S-j    S-k    S-l    @ret-ls-base  '      @ret-ls-base
   @ls-base S-z    S-x    S-c    S-v    S-b    S-n    S-m    ,      .      /             rsft
-  lctl lmet lalt           @ls-base                         ralt   rmet   rctl
+  lctl     lmet   lalt           (multi @ls-base spc)                         ralt   rmet   rctl
 )
 
 ;; Enter osmain-sft layer when press f-d
