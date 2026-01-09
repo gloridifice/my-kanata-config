@@ -22,12 +22,12 @@
   ;; Base Layer
   f (tap-hold-release 200 200 f (layer-while-held lcommand))
   d (tap-hold-release 200 200 d @held-shift-layer)
-  s (tap-hold-release 200 200 s @held-altaction-layer)
+  s (tap-hold-release 200 200 s @losalt)
   a (tap-hold-release 200 200 a (one-shot 2000 @losmet))
 
   j (tap-hold-release 200 200 j (layer-while-held rcommand))
   k (tap-hold-release 200 200 k @held-shift-layer)
-  l (tap-hold-release 200 200 l @held-altaction-layer)
+  l (tap-hold-release 200 200 l @rosalt)
   ; (tap-hold-release 200 200 ret (one-shot 2000 @losmet))
   lsft (tap-hold-release 200 200 (layer-switch capital) lsft)
 
@@ -123,10 +123,16 @@
   lctl     lalt      @lang           @ms_spc                             ralt  rmet  rctl
 )
 
-(deflayermap (altaction)
-  h (multi @wordmov left)
-  j (multi down)
-  k (multi up)
-  l (multi @wordmov right)
-  spc bspc 
+;; Desperate
+(deflayer altaction
+  esc
+   @a_grv   @a_1     @a_2     @a_3     @a_4     @a_5     @a_6     @a_7     @a_8     @a_9     @a_0     @a_-     @a_=     @a_bspc
+   @a_tab   @a_q     @a_w     @a_e     @a_r     @a_t     @a_y     @a_u     @a_i     @a_o     @a_p     @a_[     @a_]     @a_\
+  caps      @a_a     @a_s     @a_d     @a_f     @a_g     @a_h     @a_j     @a_k     @a_l     @a_;     @a_'     @a_ret
+  lsft      @a_z     @a_x     @a_c     @a_v     @a_b     @a_n    esc       @a_,     @a_.     @a_/    rsft
+  lctl     lalt      @lang           bspc                             ralt  rmet  rctl
+)
+
+(defoverrides
+  (ralt spc) (bspc)
 )

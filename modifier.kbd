@@ -97,6 +97,68 @@
 
 (defalias
   ;; --- Row 1 ---
+  a_grv  (multi @losalt grv)
+  a_1    (multi @losalt 1)
+  a_2    (multi @losalt 2)
+  a_3    (multi @losalt 3)
+  a_4    (multi @losalt 4)
+  a_5    (multi @losalt 5)
+  a_6    (multi @losalt 6)
+  a_7    (multi @losalt 7)
+  a_8    (multi @losalt 8)
+  a_9    (multi @losalt 9)
+  a_0    (multi @losalt 0)
+  a_-  (multi @losalt -)
+  a_=  (multi @losalt =)
+  a_bspc (multi @losalt bspc)
+
+  ;; --- Row 2 ---
+  a_tab  (multi @losalt tab)
+  a_q    (multi @losalt q)
+  a_w    (multi @losalt w)
+  a_e    (multi @losalt e)
+  a_r    (multi @losalt r)
+  a_t    (multi @losalt t)
+  a_y    (multi @losalt y)
+  a_u    (multi @losalt u)
+  a_i    (multi @losalt i)
+  a_o    (multi @losalt o)
+  a_p    (multi @losalt p)
+  a_[  (multi @losalt [)
+  a_]  (multi @losalt ])
+  a_\  (multi @losalt \)
+
+  ;; --- Row 3 ---
+  a_caps (multi @losalt caps)
+  a_a    (multi @losalt a)
+  a_s    (multi @losalt s)
+  a_d    (multi @losalt d)
+  a_f    (multi @losalt f)
+  a_g    (multi @losalt g)
+  a_h    (multi @losalt h)
+  a_j    (multi @losalt j)
+  a_k    (multi @losalt k)
+  a_l    (multi @losalt l)
+  a_;  (multi @losalt ;)
+  a_'  (multi @losalt ')
+  a_ret  (multi @losalt ret)
+
+  ;; --- Row 4 ---
+  ;; 注意：Shift 键通常不在此处理，保持透传或单独定义
+  a_z    (multi @losalt z)
+  a_x    (multi @losalt x)
+  a_c    (multi @losalt c)
+  a_v    (multi @losalt v)
+  a_b    (multi @losalt b)
+  a_n    (multi @losalt n)
+  a_m    (multi @losalt m)
+  a_,  (multi @losalt ,)
+  a_.  (multi @losalt .)
+  a_/  (multi @losalt /)
+)
+
+(defalias
+  ;; --- Row 1 ---
   ms_grv  (multi @losmain lsft grv)
   ms_1    (multi @losmain lsft 1)
   ms_2    (multi @losmain lsft 2)
