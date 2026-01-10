@@ -12,6 +12,8 @@
         lalt lmet
         lang (multi lctl spc)
         wordmov lctl
+        linebegin home
+        lineend end
         m_spc (multi lalt spc)
     )
 )
@@ -29,6 +31,8 @@
         lalt lalt
         lang caps
         wordmov lalt
+        linebegin (multi @losmain left)
+        lineend (multi @losmain right)
         m_spc  (multi @losmain spc)
     )
 )

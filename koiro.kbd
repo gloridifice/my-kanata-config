@@ -18,17 +18,21 @@
   held-altaction-layer (layer-while-held altaction)
   held-shift-layer (layer-while-held shift)
   held-osmain-sft-layer (layer-while-held osmain-sft)
+  held-osalt-layer (layer-while-held osalt)  
 
   ;; Base Layer
   f (tap-hold-release 200 200 f (layer-while-held lcommand))
   d (tap-hold-release 200 200 d @held-shift-layer)
-  s (tap-hold-release 200 200 s @losalt)
+  s (tap-hold-release 200 200 s @held-osalt-layer)
   a (tap-hold-release 200 200 a (one-shot 2000 @losmet))
+  e (tap-hold-release 200 200 e @held-altaction-layer) 
 
   j (tap-hold-release 200 200 j (layer-while-held rcommand))
   k (tap-hold-release 200 200 k @held-shift-layer)
-  l (tap-hold-release 200 200 l @rosalt)
+  l (tap-hold-release 200 200 l @held-osalt-layer)
   ; (tap-hold-release 200 200 ret (one-shot 2000 @losmet))
+  i (tap-hold-release 200 200 i @held-altaction-layer) 
+
   lsft (tap-hold-release 200 200 (layer-switch capital) lsft)
 
   spc (tap-hold-release 200 200 spc @held-symbol-layer)
@@ -51,7 +55,7 @@
 (deflayer base
   @esc-g
   grv   1     2     3     4     5    6    7     8     9     0     -    =    bspc
-  tab   q     w    e     r     t    y    u     i    o     p     [    ]    \
+  tab   q     w    @e     r     t    y    u     @i    o     p     [    ]    \
   @caps @a    @s    @d    @f    g    h    @j   @k    @l    @;    S-;    ret
   @lsft z     x     c     v     b    n    m     ,     .    /     rsft
   lctl  @lalt @lang           @spc                 ralt  rmet  rctl
@@ -123,16 +127,24 @@
   lctl     lalt      @lang           @ms_spc                             ralt  rmet  rctl
 )
 
-;; Desperate
-(deflayer altaction
+(deflayer osalt
   esc
-   @a_grv   @a_1     @a_2     @a_3     @a_4     @a_5     @a_6     @a_7     @a_8     @a_9     @a_0     @a_-     @a_=     @a_bspc
-   @a_tab   @a_q     @a_w     @a_e     @a_r     @a_t     @a_y     @a_u     @a_i     @a_o     @a_p     @a_[     @a_]     @a_\
+  @a_grv    @a_1     @a_2     @a_3     @a_4     @a_5     @a_6     @a_7     @a_8     @a_9     @a_0     @a_-     @a_=     @a_bspc
+  @a_tab    @a_q     @a_w     @a_e     @a_r     @a_t     @a_y     @a_u     @a_i     @a_o     @a_p     @a_[     @a_]     @a_\
   caps      @a_a     @a_s     @a_d     @a_f     @a_g     @a_h     @a_j     @a_k     @a_l     @a_;     @a_'     @a_ret
-  lsft      @a_z     @a_x     @a_c     @a_v     @a_b     @a_n    esc       @a_,     @a_.     @a_/    rsft
-  lctl     lalt      @lang           bspc                             ralt  rmet  rctl
+  lsft      @a_z     @a_x     @a_c     @a_v     @a_b     @a_n     @a_m     @a_,     @a_.     @a_/    rsft
+  lctl     lalt      @lang               bspc                              ralt     rmet     rctl
 )
 
-(defoverrides
-  (ralt spc) (bspc)
+(deflayermap (altaction)
+  h (multi @wordmov left)
+  j PageDown
+  k PageUp
+  l (multi @wordmov right)
+
+  ;;f (multi bspc)
+  spc (multi @wordmov bspc)
+
+  n (multi @linebegin)
+  m (multi @lineend)
 )
