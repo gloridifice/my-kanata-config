@@ -74,7 +74,7 @@
   @ls-base
   S-grv  S-1    S-2    S-3    S-4    S-5    S-6    S-7    S-8    S-9    S-0    S--    S-=    S-bspc
   S-tab  S-q    S-w    S-e    S-r    S-t    S-y    S-u    S-i    S-o    S-p    S-[    S-]    S-\
-  caps   S-a    S-s    S-d    S-f    S-g    S-h    S-j    S-k    S-l    S-;    S-'    S-ret 
+  caps   S-a    S-s    S-d    S-f    S-g    S-h    S-j    S-k    S-l    S-ret    S-'    S-ret 
   lsft   S-z    S-x    S-c    S-v    S-b    S-n    S-m    S-,    S-.    S-/    rsft
   lctl lmet lalt           tab              ralt   rmet   rctl
 )
