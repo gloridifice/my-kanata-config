@@ -19,6 +19,7 @@
   held-shift-layer (layer-while-held shift)
   held-osmain-sft-layer (layer-while-held osmain-sft)
   held-osalt-layer (layer-while-held osalt)  
+  held-num-layer (layer-while-held num)  
 
   ;; Base Layer
   f (tap-hold-release 200 200 f (layer-while-held lcommand))
@@ -26,6 +27,7 @@
   s (tap-hold-release 200 200 s @held-osalt-layer)
   a (tap-hold-release 200 200 a (one-shot 2000 @losmet))
   e (tap-hold-release 200 200 e @held-altaction-layer) 
+  w (tap-hold-release 200 200 w @held-num-layer) 
 
   j (tap-hold-release 200 200 j (layer-while-held rcommand))
   k (tap-hold-release 200 200 k @held-shift-layer)
@@ -55,7 +57,7 @@
 (deflayer base
   @esc-g
   grv   1     2     3     4     5    6    7     8     9     0     -    =    bspc
-  tab   q     w    @e     r     t    y    u     @i    o     p     [    ]    \
+  tab   q     @w    @e     r     t    y    u     @i    o     p     [    ]    \
   @caps @a    @s    @d    @f    g    h    @j   @k    @l    @;    S-;    ret
   @lsft z     x     c     v     b    n    m     ,     .    /     rsft
   lctl  @lalt @lang           @spc                 ralt  rmet  rctl
@@ -142,9 +144,22 @@
   k PageUp
   l (multi @wordmov right)
 
-  ;;f (multi bspc)
   spc (multi @wordmov bspc)
 
-  n (multi @linebegin)
-  m (multi @lineend)
+  n @linebegin
+  m @lineend
+)
+
+(deflayermap (num)
+  h 0
+  m 1
+  , 2
+  . 3
+  j 4
+  k 5
+  l 6
+  u 7
+  i 8
+  o 9
+  n .
 )
